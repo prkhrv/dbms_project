@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="searchbox">
+        <form method="post">
+          {% csrf_token %}
+          <input type="text" name="username" value=""><a href="details"><button type="button" name="button">Search</button></a>
+        </form>
+      </div>
+    <div class="container">
+      <div class="text-center">
+        <h1>Registration Form</h1><br><br>
+      </div>
+      <form  method="post" onkeyup="return validateName();" style="margin-left:20%; margin-right:20%;">
+        {% csrf_token %}
+        <p>Name:</p>
+        <input type="text" name="name" value="">
+        <p>gender</p>
+        <input type="radio" name="gender" value="Male">
+        <input type="radio" name="gender" value="Female">
+        <input type="radio" name="gender" value="Others">
+        <p>Father's Name:</p>
+        <input type="text" name="fname">
+        <p>Roll. No.:</p>
+        <input type="text" name="roll">
+        <!-- <p>D.O.B.</p>
+        <input type="date" name="dob" value=""> -->
+        <p>Email:</p>
+        <input type="email" name="email" value="">
+        <p>Phone:</p>
+        <input type="text" name="phone" value="">
+        <p>Branch:</p>
+        <input type="text" name="branch" value="">
+        <p>Address</p>
+        <input type="text" name="address" value="">
+        <button class="btn btn-primary" type="submit" name="button">Submit</button>
+      </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+    <!-- <script>
+      function validateName() {
+        var x = document.getElementById('name');
+        var y = document.getElementById('fname');
+        var rno = document.getElementById('roll');
+        var pno = document.getElementById('phone');
+
+
+
+        if( /[^a-zA-Z\-\/]/.test(x.value) || x.value === "" ){
+          x.setCustomValidity("Please enter a valid Name");
+        }
+        else{
+          x.setCustomValidity("");
+        }
+        if( /[^a-zA-Z\-\/]/.test(y.value) || y.value === "" ){
+          y.setCustomValidity("Please enter a valid Name");
+        }
+        else{
+          y.setCustomValidity("");
+        }
+        if(rno.value.length>10 || rno.value.length<10){
+          rno.setCustomValidity("Please enter a correct Roll.No.");
+        }
+        else{
+          rno.setCustomValidity("");
+        }
+        if(pno.value.length>10 || pno.value.length<10 || pno.value.charAt(0)<7){
+          pno.setCustomValidity("Please enter a correct Phone.No.");
+        }
+        else{
+          pno.setCustomValidity("");
+        }
+        x.onchange = validateName();
+        y.onchange = validateName();
+        rno.onchange = validateName();
+        pno.onchange = validateName();
+
+      }
+    </script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
